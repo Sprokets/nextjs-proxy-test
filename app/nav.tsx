@@ -33,6 +33,22 @@ export default function Nav() {
           Route Group Page 2
         </NextLink>
       </li>
+      <li>
+        <NextLink
+          className="underline text-blue-500"
+          href="/test-page/group1/ghi"
+        >
+          Route Group -&gt; Page 1 -&gt; Slug GHI
+        </NextLink>
+      </li>
+      <li>
+        <NextLink
+          className="underline text-blue-500"
+          href="/test-page/group1/jkl"
+        >
+          Route Group -&gt; Page 2 -&gt; Slug JKL
+        </NextLink>
+      </li>
     </ul>
   );
 }
