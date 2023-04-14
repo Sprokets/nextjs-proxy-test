@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { Fragment } from 'react';
+import '@/app/globals.css';
 
 interface Props {
   errorMessage?: string;
@@ -12,20 +12,26 @@ interface Props {
 const Error: NextPage<Props> = ({ errorMessage, headers }) => {
   return (
     <>
-      <p>{errorMessage || 'no error message'}</p>
+      <h1 className="text-6xl font-bold">
+        {errorMessage || 'no error message'}
+      </h1>
+
       {headers ? (
-        <dl className="grid grid-cols-2">
+        <table className="min-w-full divide-y divide-gray-300">
           {headers.map((header, i) => (
-            <Fragment key={header.key}>
-              <dt className={`p-4 ${i % 2 ? 'bg-gray-100' : ''}`}>
+            <tr key={header.key} className={i % 2 ? 'bg-gray-100' : ''}>
+              <th
+                scope="row"
+                className="align-top whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900 text-left"
+              >
                 {header.key}
-              </dt>
-              <dd className={`p-4 ${i % 2 ? 'bg-gray-100' : ''}`}>
+              </th>
+              <td className="px-2 py-2 text-sm text-gray-900">
                 {header.value}
-              </dd>
-            </Fragment>
+              </td>
+            </tr>
           ))}
-        </dl>
+        </table>
       ) : (
         'No headers'
       )}
@@ -40,7 +46,7 @@ Error.getInitialProps = async ({ req, err }) => {
   }[] = [];
 
   if (req && req.headers) {
-    Object.keys(req.headers).forEach(key => {
+    Object.keys(req.headers).forEach((key) => {
       headers.push({ key, value: req.headers[key] });
     });
   }
