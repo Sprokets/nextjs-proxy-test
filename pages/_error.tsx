@@ -12,9 +12,13 @@ interface Props {
 const Error: NextPage<Props> = ({ errorMessage, headers }) => {
   return (
     <>
-      <h1 className="text-6xl font-bold">
+      <h1 className="text-xl font-bold mb-8">
         {errorMessage || 'no error message'}
       </h1>
+
+      <h2 className="text-base font-semibold leading-6 text-gray-900 mb-4">
+        Headers:
+      </h2>
 
       {headers ? (
         <table className="min-w-full divide-y divide-gray-300">
