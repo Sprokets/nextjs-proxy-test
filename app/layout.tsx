@@ -17,7 +17,9 @@ export default function RootLayout({
         <div>
           <Segment />
         </div>
-        {children}
+        <main className="flex min-h-screen max-w-xl flex-col  p-24 gap-8">
+          {children}
+        </main>
       </body>
     </html>
   );

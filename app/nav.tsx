@@ -2,7 +2,7 @@ import NextLink from 'next/link';
 
 export default function Nav() {
   return (
-    <ul className="text-2xl font-semibold">
+    <ul className="list-disc font-semibold">
       <li>
         <NextLink className="underline text-blue-500" href="/">
           Home
@@ -47,6 +47,16 @@ export default function Nav() {
           href="/test-page/group1/jkl"
         >
           Route Group -&gt; Page 2 -&gt; Slug JKL
+        </NextLink>
+      </li>
+      <li>
+        <NextLink className="underline text-blue-500" href="/pages-page">
+          Pages Page (in /pages directory)
+        </NextLink>
+      </li>
+      <li>
+        <NextLink className="underline text-blue-500" href="/pages-page/sluggo">
+          Pages Page (in /pages directory) with slug
         </NextLink>
       </li>
     </ul>
