@@ -12,6 +12,8 @@ The only changes from the [base installation](https://beta.nextjs.org/docs/insta
 
 This repo is hosted at https://nextjs-proxy-test-ten.vercel.app/test/path
 
+I added an `_error.ts` page that outputs the headers it sees. Maybe that would help.
+
 ## Soft navigation not working on [dynamic segments] when using nextConfig.basePath & new /app directory [#48305](vercel/next.js#48305)
 
 Open inspector, and go to https://nextjs-proxy-test-ten.vercel.app/test/path
