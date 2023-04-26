@@ -12,6 +12,7 @@ export async function middleware(request: NextRequest) {
     console.log('pathname');
     console.log(request.nextUrl.pathname);
     console.log(request.headers.get('host'));
+    console.log(request.headers.get('x-forwarded-server'));
     console.log(request.nextUrl);
     console.log(request.url);
   }
